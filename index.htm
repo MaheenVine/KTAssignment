@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="style.css" rel="stylesheet" />
+        <script src="script.js"></script>
+        <title>FindmyArtist</title>
+      </head>
+
+    <body style="background-color:white;">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#About">About</a>
+        <a href="#">Genre</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+      </div>
+      <div id="main">
+      <div style="background-image:url('topbar.png');background-size:cover;color:aliceblue;height:600px;">
+        <div style="padding-top: 5px;text-align: center;">
+          <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular','Lucida Grande',
+         'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:100px;background-color: black ;">
+         FindmyArtist</h1>
+          <p style="font-family: 'Courier New', Courier, monospace;font-size: 50px;padding-top: 50px;">
+        Your guide to musical Euphoria!</p>
+         
+         <div class="topnav">
+            <span style="font-size:40px; cursor:pointer;font-family:'Courier New', Courier, monospace;margin-left: 150px;"
+             onclick="openNav()"> &#9776;|Menu|</span>
+            <div class="search-container">                
+              <form action="/action_page.php">
+                <input type="text" placeholder="Enter Artist Name.." id="Input">
+                <button type="button" onclick="search()">Search</button>
+              </form>
+            </div>
+          </div>
+      </div>
+    <p id="search" style="text-align: center; font-size:20px"></p>
+    </div>
+    
+<div class="about-section" id="About">
+  <h1>About Us Page</h1>
+  <hr>
+  <p>We aim to provide you with a quick and easy way to plan your exhilerating musical experience.</p>
+  <p>Lookup your favorite artists, with their work, view genres and find events happening locally
+    and internationally.</p>
+</div>
+
+<div id="result">
+    <div id="card" style="display: none;">
+        <img id="profilePic" src="" alt="Profile Pic" style="width:100%">
+        <h1 id="artistName"></h1>
+        <div style="margin: 24px 0;">  
+          <a id="facebookUrl" href="" style="display:inline-block;"><i class="fa fa-facebook" ></i></a> 
+        </div>
+      </div>
+  <div id="events">  
+    <p id="upcomingEvents" style="display:inline-block;"></p>
+    <button id= "upcomingeventButton" style="display: none;" onclick="apiEvents(document.getElementById('Input').value,'upcoming')">
+    Show Events</button>
+    <br>
+    <p id="pastEvents" style="display: inline-block;"></p>
+    <button id= "pasteventButton" style="display: none;" onclick="apiEvents(document.getElementById('Input').value,'past')">
+    Show Events</button>
+
+    <div id="showEvents" style="display: none;"></div>
+      <div id="individualEvent" style="display: none;"></div>
+
+    
+    
+  </div>
+
+</div>
+</div>
+
+</body>
+
+</html>
